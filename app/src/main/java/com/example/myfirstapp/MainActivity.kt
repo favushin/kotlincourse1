@@ -6,29 +6,17 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-//    var boolean : Boolean = true
-//    var char : Char = 'A'
-//    var string : String = "ABC"
-    var tvTest : TextView? = null // or lateinit var tvTest : TextView
-    lateinit var bTest : Button
-
+    lateinit var bindingClass : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tvTest = findViewById(R.id.tvTest)
-        tvTest?.text = "text is changed"
-
-        bTest = findViewById(R.id.bTest)
-        bTest.setOnClickListener{
-            tvTest?.text = "this works"
+        bindingClass = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindingClass.root)
+        bindingClass.button.setOnClickListener {
+            bindingClass.textView3.visibility = View.GONE
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        tvTest?.text = "paused"
     }
 }
