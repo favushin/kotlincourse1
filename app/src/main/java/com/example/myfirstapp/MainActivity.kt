@@ -7,17 +7,22 @@ import android.view.View
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    var counter = 5
-    var counter2 = 9
+    var a = 5
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val tvTest = findViewById<TextView>(R.id.tvTest)
-        var counter3 = counter + counter2
-        tvTest.text = counter3.toString()
-    }
+    var byte:Byte = 1
+    var short:Short = 1
+    var int:Int = 1
+    var long:Long = 1
 
-    fun onClickTest(view : View) {
-    }
+    var float:Float = 1.0f
+    var double:Double = 1.0
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_main)
+//        val tvTest = findViewById<TextView>(R.id.tvTest)
+//    }
+//
+//    fun onClickTest(view : View) {
+//    }
 }
