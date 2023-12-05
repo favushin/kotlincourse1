@@ -4,25 +4,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    var a = 5
+//    var boolean : Boolean = true
+//    var char : Char = 'A'
+//    var string : String = "ABC"
+    var tvTest : TextView? = null // or lateinit var tvTest : TextView
+    lateinit var bTest : Button
 
-    var byte:Byte = 1
-    var short:Short = 1
-    var int:Int = 1
-    var long:Long = 1
 
-    var float:Float = 1.0f
-    var double:Double = 1.0
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        tvTest = findViewById(R.id.tvTest)
+        tvTest?.text = "text is changed"
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//        val tvTest = findViewById<TextView>(R.id.tvTest)
-//    }
-//
-//    fun onClickTest(view : View) {
-//    }
+        bTest = findViewById(R.id.bTest)
+        bTest.setOnClickListener{
+            tvTest?.text = "this works"
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        tvTest?.text = "paused"
+    }
 }
