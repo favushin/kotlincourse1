@@ -1,5 +1,6 @@
 package com.example.myfirstapp
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +10,13 @@ import android.widget.TextView
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bindingClass : ActivityMainBinding
+    lateinit var bindingClass: ActivityMainBinding
 
-    val a = 324
-    val b = 34
+    val maxPeople = 35
+    val currentPeople = 12
+
+    val x = 5
+    val y = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,18 +24,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
 
         bindingClass.buttonPlus.setOnClickListener {
-            val result = a + b
-            bindingClass.textViewResult.text = result.toString()
+            if (maxPeople >= currentPeople) {
+                bindingClass.textViewResult.text = "$currentPeople is ok"
+                bindingClass.textViewResult.setBackgroundColor(Color.GREEN)
+                bindingClass.textViewResult.setTextColor(Color.BLACK)
+            } else {
+                bindingClass.textViewResult.text = "$currentPeople is not ok"
+                bindingClass.textViewResult.setBackgroundColor(Color.RED)
+                bindingClass.textViewResult.setTextColor(Color.BLACK)
+            }
         }
 
         bindingClass.buttonMinus.setOnClickListener {
-            val result = a - b
-            bindingClass.textViewResult.text = result.toString()
+            when(5) {
+                1 -> {
+                    bindingClass.textViewResult.text = "number is one"
+                }
+                5 -> {
+                    bindingClass.textViewResult.text = "number is five"
+                }
+            }
         }
 
         bindingClass.buttonMultiply.setOnClickListener {
-            val result = a * b
-            bindingClass.textViewResult.text = result.toString()
+            bindingClass.textViewResult.text =
+                when(y / x) {
+                    in 0..10 -> "the result is between zero and ten"
+                    !in 0..10 -> "the result is not between zero and ten"
+                    else -> "error"
+                }
         }
     }
 }
