@@ -4,46 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvInfo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="324 and 34"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="20dp"
+        android:text="Write down amount of subscribers of your channel:"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonPlus"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/ptEnter"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="plus"
-        app:layout_constraintEnd_toEndOf="@+id/textViewResult"
-        app:layout_constraintStart_toStartOf="@+id/textViewResult"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="amount of subscribers"
+        android:inputType="number|textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tvInfo"
+        app:layout_constraintStart_toStartOf="@+id/tvInfo"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfo" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ptEnter"
+        app:layout_constraintStart_toStartOf="@+id/ptEnter"
+        app:layout_constraintTop_toBottomOf="@+id/ptEnter" />
 
     <Button
-        android:id="@+id/buttonMinus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/bMessage"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:text="minus"
-        app:layout_constraintEnd_toEndOf="@+id/buttonPlus"
-        app:layout_constraintStart_toStartOf="@+id/buttonPlus"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
-
-    <Button
-        android:id="@+id/buttonMultiply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="multiply"
-        app:layout_constraintEnd_toEndOf="@+id/buttonMinus"
-        app:layout_constraintStart_toStartOf="@+id/buttonMinus"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMinus" />
+        android:text="test your level"
+        app:layout_constraintEnd_toEndOf="@+id/ptEnter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ptEnter"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

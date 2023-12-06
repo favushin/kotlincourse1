@@ -10,49 +10,29 @@ import android.widget.TextView
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bindingClass: ActivityMainBinding
-
-    val maxPeople = 35
-    val currentPeople = 12
-
-    val x = 5
-    val y = 10
+    lateinit var bindingClass : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        bindingClass.buttonPlus.setOnClickListener {
-            if (maxPeople >= currentPeople) {
-                bindingClass.textViewResult.text = "$currentPeople is ok"
-                bindingClass.textViewResult.setBackgroundColor(Color.GREEN)
-                bindingClass.textViewResult.setTextColor(Color.BLACK)
-            } else {
-                bindingClass.textViewResult.text = "$currentPeople is not ok"
-                bindingClass.textViewResult.setBackgroundColor(Color.RED)
-                bindingClass.textViewResult.setTextColor(Color.BLACK)
-            }
-        }
-
-        bindingClass.buttonMinus.setOnClickListener {
-            when(5) {
-                1 -> {
-                    bindingClass.textViewResult.text = "number is one"
+        bindingClass.bMessage.setOnClickListener {
+            val resultValue = bindingClass.ptEnter.text.toString().toInt()
+            when(resultValue) {
+                in 0..1000 -> {
+                    bindingClass.tvMessage.visibility = View.VISIBLE
+                    bindingClass.tvMessage.text = "you are newbie bloger"
                 }
-                5 -> {
-                    bindingClass.textViewResult.text = "number is five"
+                in 1000..100000 -> {
+                    bindingClass.tvMessage.visibility = View.VISIBLE
+                    bindingClass.tvMessage.text = "you are middle bloger"
+                }
+                else -> {
+                    bindingClass.tvMessage.visibility = View.VISIBLE
+                    bindingClass.tvMessage.text = "you are popular bloger"
                 }
             }
-        }
-
-        bindingClass.buttonMultiply.setOnClickListener {
-            bindingClass.textViewResult.text =
-                when(y / x) {
-                    in 0..10 -> "the result is between zero and ten"
-                    !in 0..10 -> "the result is not between zero and ten"
-                    else -> "error"
-                }
         }
     }
 }
