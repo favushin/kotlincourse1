@@ -7,35 +7,21 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvInfo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="20dp"
-        android:text="Write down amount of subscribers of your channel:"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/ptEnter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="250dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="amount of subscribers"
-        android:inputType="number|textPersonName"
+        android:hint="Write down your name:"
+        android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/tvInfo"
-        app:layout_constraintStart_toStartOf="@+id/tvInfo"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvMessage"
@@ -55,7 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:text="test your level"
+        android:text="Take your salary"
         app:layout_constraintEnd_toEndOf="@+id/ptEnter"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/ptEnter"

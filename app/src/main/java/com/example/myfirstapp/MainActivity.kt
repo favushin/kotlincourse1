@@ -18,19 +18,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
 
         bindingClass.bMessage.setOnClickListener {
-            val resultValue = bindingClass.ptEnter.text.toString().toInt()
+            val resultValue = bindingClass.ptEnter.text.toString()
             when(resultValue) {
-                in 0..1000 -> {
+                "Yerlan" -> {
                     bindingClass.tvMessage.visibility = View.VISIBLE
-                    bindingClass.tvMessage.text = "you are newbie bloger"
+                    bindingClass.tvMessage.text = "you are ceo,\n" + "take your 100000$"
                 }
-                in 1000..100000 -> {
+                "Adilet" -> {
                     bindingClass.tvMessage.visibility = View.VISIBLE
-                    bindingClass.tvMessage.text = "you are middle bloger"
+                    bindingClass.tvMessage.text = "you are engineer,\n" + "take your 12000$"
+                }
+                "Serik" -> {
+                    bindingClass.tvMessage.visibility = View.VISIBLE
+                    bindingClass.tvMessage.text = "you are waiter,\n" + "take your 1300$"
                 }
                 else -> {
                     bindingClass.tvMessage.visibility = View.VISIBLE
-                    bindingClass.tvMessage.text = "you are popular bloger"
+                    bindingClass.tvMessage.text = "you don't work in this corporation"
                 }
             }
         }
