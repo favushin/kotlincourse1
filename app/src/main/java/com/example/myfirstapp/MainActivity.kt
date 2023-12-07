@@ -14,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
+        bindingClass.imageView3.setImageResource(R.drawable.ceo)
     }
 }
