@@ -1,15 +1,16 @@
 package com.example.myfirstapp.constances
 
 object Constance {
-    const val salaryOfCeo = 100000
-    const val salaryOfEngineer = 12500
-    const val salaryOfWaiter = 1300
+    const val SIGN_IN_STATE = "sign_in"
+    const val SIGN_UP_STATE = "sign_up"
+    const val SIGN_STATE = "sign"
+    const val REQUEST_CODE_SIGN_IN = 1212
+    const val REQUEST_CODE_SIGN_UP = 2121
 
-    const val ceo = "Yerlan"
-    const val engineer = "Adilet"
-    const val waiter = "Serik"
-
-    const val passwordOfCeo = "4365"
-    const val passwordOfEngineer = "9656"
-    const val passwordOfWaiter = "6513"
+    const val LOGIN = "login"
+    const val PASSWORD = "password"
+    const val NAME = "name"
+    const val SURNAME = "surname"
+    const val MIDDLE_NAME = "middle_name"
+    const val AVATAR = "avatar"
 }

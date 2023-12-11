@@ -27,7 +27,7 @@
         </activity>
 
         <activity
-            android:name=".TestActivity1"
+            android:name=".SignInUpActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
