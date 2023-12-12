@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login and Registration</string>
+    <string name="app_name">App</string>
     <string name="ok" translatable="false">OK</string>
     <string name="hello">Hello</string>
     <string name="sign_in" translatable="false">Sign In</string>

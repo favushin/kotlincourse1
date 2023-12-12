@@ -26,15 +26,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".SignInUpActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-
     </application>
 
 </manifest>
