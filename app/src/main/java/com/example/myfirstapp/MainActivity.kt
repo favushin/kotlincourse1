@@ -1,8 +1,13 @@
 package com.example.myfirstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapp.databinding.ActivityMainBinding
 import kotlin.math.pow
@@ -10,35 +15,23 @@ import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private var launcher: ActivityResultLauncher<Intent>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
 
-    fun onClickCalc(view: View) {
-        if(!isFieldEmpty()) {
-            val result = getString(R.string.result_info) + getResult()
-            binding.tvResult.text = result
+        launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result: ActivityResult ->
+            if(result.resultCode == RESULT_OK) {
+                val text = result.data?.getStringExtra("key")
+                Log.d("MyLog", "Result from MainActivity2: $text")
+            }
         }
     }
 
-    private fun isFieldEmpty(): Boolean {
-        binding.apply {
-            if(tietInputA.text.isNullOrEmpty()) tietInputA.error = "Field must be filled!"
-            if(tietInputB.text.isNullOrEmpty()) tietInputB.error = "Field must be filled!"
-            return tietInputA.text.isNullOrEmpty() || tietInputB.text.isNullOrEmpty()
-        }
-    }
-
-    private fun getResult(): String {
-        val a: Double
-        val b: Double
-        binding.apply {
-            a = tietInputA.text.toString().toDouble()
-            b = tietInputB.text.toString().toDouble()
-        }
-        return sqrt(a.pow(2) + b.pow(2)).toString()
+    fun onClickMain(view: View) {
+        launcher?.launch(Intent(this, MainActivity2::class.java))
     }
 }
