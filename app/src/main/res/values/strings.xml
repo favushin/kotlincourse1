@@ -1,14 +1,8 @@
 <resources>
-    <string name="app_name">App</string>
-    <string name="ok" translatable="false">OK</string>
-    <string name="hello">Hello</string>
-    <string name="sign_in" translatable="false">Sign In</string>
-    <string name="sign_up" translatable="false">Sign Up</string>
-    <string name="avatar" translatable="false">Avatar</string>
-    <string name="login" translatable="false">Login</string>
-    <string name="password" translatable="false">Password</string>
-    <string name="name" translatable="false">Name</string>
-    <string name="surname" translatable="false">Surname</string>
-    <string name="middle_name" translatable="false">Middle Name</string>
-    <string name="done" translatable="false">Done</string>
+    <string name="app_name">Pythagorean Theorem</string>
+    <string name="title">Calculating "C"</string>
+    <string name="result_info">Result:&#160;</string>
+    <string name="input_a">Enter value of \"a\":</string>
+    <string name="input_b">Enter value of \"b\":</string>
+    <string name="buttonDone">Calculate \"c\"</string>
 </resources>
