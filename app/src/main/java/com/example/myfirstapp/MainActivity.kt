@@ -6,31 +6,69 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bindingView : ActivityMainBinding
+    lateinit var bindingView: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState : Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingView = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingView.root)
 
-        var array = arrayOf(1, 2, 3)
-        var array2 : Array<Int> = arrayOf(1, 2, 3)
-        var array3 : IntArray = intArrayOf(1, 2, 3)
-        var array4 = intArrayOf(1, 2, 3)
+//        for (index in 0..9) {
+//            Log.d("MyLog", "index: $index")
+//        }
 
-        var array5 = IntArray(3)
-        var array6 = arrayOfNulls<Int>(3)
-        var array7 = emptyArray<Int>()
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        for(index in 0..2) {
+//            Log.d("MyLog", "fruits: ${listOfFruits[index]}")
+//        }
 
-        array.contentToString()
-        array.reverse()
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        for(fruit in listOfFruits) {
+//            Log.d("MyLog", "fruits: $fruit")
+//        }
 
-        var list = listOf(1, 2, 3)
-        var arrayList = arrayListOf(1, 2, 3)
-        arrayList.add(4)
-        arrayList.removeAt(3)
-        arrayList.addAll(list)
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        for((index, item) in listOfFruits.withIndex()) {
+//            Log.d("MyLog", "index: $index | item: $item")
+//        }
 
-        Log.d("MyLog", "output: $arrayList")
+//        for(index in 10 downTo 4 step 3) {
+//            Log.d("MyLog", "index: $index")
+//        }
+
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        for(index in 1..listOfFruits.size - 1) {
+//            Log.d("MyLog", "index: ${listOfFruits[index]}")
+//        }
+
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        for(index in 1 until listOfFruits.size) {
+//            Log.d("MyLog", "index: ${listOfFruits[index]}")
+//        }
+
+//        for(index in 0..100) {
+//            if(index == 7) {
+//                Log.d("MyLog", "index: $index")
+//                break
+//            }
+//        }
+
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        listOfFruits.forEach {
+//            Log.d("MyLog", "fruit: $it")
+//        }
+
+//        val listOfFruits = listOf("apple", "banana", "kiwi")
+//        var fruit = ""
+//        var index = 0
+//        while(fruit != "banana") {
+//            fruit = listOfFruits[index]
+//            index++
+//            Log.d("MyLog", "Fruit: $fruit")
+//        }
+
+//        do{
+//            Log.d("MyLog", "Done")
+//        } while(false)
     }
 }
