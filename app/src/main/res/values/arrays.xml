@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>Adilet</item>
+        <item>Yerlan</item>
+        <item>Samat</item>
+        <item>Arman</item>
+        <item>Maqsat</item>
+        <item>Zhaqan</item>
+    </string-array>
+</resources>
