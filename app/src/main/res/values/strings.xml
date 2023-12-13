@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Plants Handbook</string>
+    <string name="buttongImageChange">next image</string>
     <string name="add_plant">Add Plant</string>
+    <string name="flower_title">Title</string>
+    <string name="flower_description">Description</string>
+    <string name="button_done">Done</string>
 </resources>
