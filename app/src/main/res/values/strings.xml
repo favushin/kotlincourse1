@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Plants Handbook</string>
-    <string name="buttongImageChange">next image</string>
-    <string name="add_plant">Add Plant</string>
-    <string name="flower_title">Title</string>
-    <string name="flower_description">Description</string>
-    <string name="button_done">Done</string>
+    <string name="app_name">ToolBar</string>
+    <string name="menu_sync">Sync</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_delete">Delete</string>
 </resources>
