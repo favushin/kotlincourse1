@@ -4,4 +4,9 @@
     <string name="menu_search">Search</string>
     <string name="menu_save">Save</string>
     <string name="menu_delete">Delete</string>
+
+    <string name="bottom_menu_draw">Draw</string>
+    <string name="bottom_menu_attach_file">Attach File</string>
+    <string name="bottom_menu_mark">Mark</string>
+    <string name="bottom_menu_done">Done</string>
 </resources>

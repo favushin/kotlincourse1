@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/bottom_menu_draw"
+        android:id="@+id/draw"
+        android:icon="@drawable/ic_draw"
+        android:orderInCategory="1"
+        />
+
+    <item
+        android:title="@string/bottom_menu_attach_file"
+        android:id="@+id/attach_file"
+        android:icon="@drawable/ic_attach_file"
+        android:orderInCategory="2"
+        />
+
+    <item
+        android:title="@string/bottom_menu_mark"
+        android:id="@+id/mark"
+        android:icon="@drawable/ic_mark"
+        android:orderInCategory="3"
+        />
+
+    <item
+        android:title="@string/bottom_menu_done"
+        android:id="@+id/done"
+        android:icon="@drawable/ic_done"
+        android:orderInCategory="4"
+        />
+</menu>
