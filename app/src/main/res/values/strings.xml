@@ -1,8 +1,4 @@
 <resources>
-    <string name="app_name">Pythagorean Theorem</string>
-    <string name="title">Calculating "C"</string>
-    <string name="result_info">Result:&#160;</string>
-    <string name="input_a">Enter value of \"a\":</string>
-    <string name="input_b">Enter value of \"b\":</string>
-    <string name="buttonDone">Calculate \"c\"</string>
+    <string name="app_name">Plants Handbook</string>
+    <string name="add_plant">Add Plant</string>
 </resources>
