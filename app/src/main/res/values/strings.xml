@@ -2,4 +2,5 @@
     <string name="app_name">Drawer Layout</string>
     <string name="button_open">Open Menu</string>
     <string name="tv_content">Main Content</string>
+    <string name="textview">TextView</string>
 </resources>

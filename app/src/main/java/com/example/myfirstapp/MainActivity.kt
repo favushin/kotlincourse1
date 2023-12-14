@@ -17,6 +17,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
+            nvMenu.setNavigationItemSelectedListener {
+                when(it.itemId) {
+                    R.id.item_1 -> {
+                        Toast.makeText(this@MainActivity, "Item 1", Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.item_2 -> {
+                        Toast.makeText(this@MainActivity, "Item 2", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                drawer.closeDrawer(GravityCompat.START)
+                true
+            }
+
             button.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
             }
