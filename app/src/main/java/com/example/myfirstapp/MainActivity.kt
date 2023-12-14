@@ -16,23 +16,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.apply {
-            nvMenu.setNavigationItemSelectedListener {
-                when(it.itemId) {
-                    R.id.item_1 -> {
-                        Toast.makeText(this@MainActivity, "Item 1", Toast.LENGTH_SHORT).show()
-                    }
-                    R.id.item_2 -> {
-                        Toast.makeText(this@MainActivity, "Item 2", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                drawer.closeDrawer(GravityCompat.START)
-                true
-            }
 
-            button.setOnClickListener {
-                drawer.openDrawer(GravityCompat.START)
-            }
+        binding.buttonGoFG2.setOnClickListener() {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.place_holder, BlankFragment2.newInstance())
+                .commit()
         }
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.place_holder, BlankFragment.newInstance())
+            .commit()
     }
 }
