@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startCountDownTimer(timeMillis: Long) {
         timer?.cancel()
-        timer = object : CountDownTimer(timeMillis, 1000) {
+        timer = object : CountDownTimer(timeMillis, 1) {
             override fun onTick(timeM: Long) {
                 binding.tvTimer.text = timeM.toString()
             }
