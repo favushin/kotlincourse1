@@ -1,7 +1,3 @@
 <resources>
-    <string name="app_name">Fragment Data Exchange</string>
-    <string name="title_tv_message">Message</string>
-    <string name="send_message_to_fg1">Message To FG1</string>
-    <string name="send_message_to_fg2">Message To FG2</string>
-    <string name="send_message_to_ma">Message to MA</string>
+    <string name="app_name">Crystal Ball</string>
 </resources>

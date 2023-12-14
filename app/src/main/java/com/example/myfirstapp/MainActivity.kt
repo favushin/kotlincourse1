@@ -8,23 +8,22 @@ import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val dataModel: DataModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        openFrag(BlankFragment.newInstance(), R.id.place_holder)
-        openFrag(BlankFragment2.newInstance(), R.id.place_holder2)
-        dataModel.messageForActivity.observe(this, {
-            binding.tvMain.text = it
-        })
+        binding.tvReto.setOnClickListener {
+            binding.tvReto.text = getReto()
+        }
     }
 
-    private fun openFrag(f: Fragment, idHolder: Int) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(idHolder, f)
-            .commit()
+    private fun getReto(): String {
+        return resources.getStringArray(R.array.retos)[randomNumber()]
+    }
+
+    private fun randomNumber(): Int {
+        val size = resources.getStringArray(R.array.retos).size - 1
+        return (0..size).random()
     }
 }
