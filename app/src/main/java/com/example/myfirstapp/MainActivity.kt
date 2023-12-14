@@ -1,32 +1,30 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private val dataModel: DataModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        openFrag(BlankFragment.newInstance(), R.id.place_holder)
+        openFrag(BlankFragment2.newInstance(), R.id.place_holder2)
+        dataModel.messageForActivity.observe(this, {
+            binding.tvMain.text = it
+        })
+    }
 
-        binding.buttonGoFG2.setOnClickListener() {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.place_holder, BlankFragment2.newInstance())
-                .commit()
-        }
-
+    private fun openFrag(f: Fragment, idHolder: Int) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.place_holder, BlankFragment.newInstance())
+            .replace(idHolder, f)
             .commit()
     }
 }

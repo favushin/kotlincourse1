@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#989292</color>
     <color name="unchecked_menu_icon">#981E1E</color>
+    <color name="blue">#2196F3</color>
 </resources>
