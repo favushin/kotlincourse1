@@ -1,37 +1,34 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import android.os.CountDownTimer
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.asLiveData
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private var timer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.apply {
-            buttonStart.setOnClickListener {
-                startCountDownTimer(20000)
+        val db = MainDb.getDb(this)
+        db.getDao().getAllItems().asLiveData().observe(this) { list ->
+            binding.tvList.text = ""
+            list.forEach {
+                val text = "Id: ${it.id} Name: ${it.name} Price: ${it.price}\n"
+                binding.tvList.append(text)
             }
         }
-    }
-
-    private fun startCountDownTimer(timeMillis: Long) {
-        timer?.cancel()
-        timer = object : CountDownTimer(timeMillis, 1) {
-            override fun onTick(timeM: Long) {
-                binding.tvTimer.text = timeM.toString()
-            }
-
-            override fun onFinish() {
-                binding.tvTimer.text = "Finish"
-            }
-        }.start()
+        binding.buttonSave.setOnClickListener {
+            val item = Item(
+                null,
+                binding.ptName.text.toString(),
+                binding.ptPrice.text.toString()
+            )
+            Thread {
+                db.getDao().insertItems(item)
+            }.start()
+        }
     }
 }

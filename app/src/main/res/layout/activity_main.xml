@@ -10,39 +10,52 @@
     tools:openDrawer="start" >
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Timer"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTimer"
-        app:layout_constraintEnd_toEndOf="@+id/tvTimer"
-        app:layout_constraintStart_toStartOf="@+id/tvTimer" />
-
-    <TextView
-        android:id="@+id/tvTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="0000"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tvList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/ptName"
+        app:layout_constraintEnd_toEndOf="@+id/ptName"
+        app:layout_constraintStart_toStartOf="@+id/ptName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonStart"
+        android:id="@+id/buttonSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Start"
-        android:textColor="#FFC107"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/ptName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/ptPrice"
+        app:layout_constraintEnd_toEndOf="@+id/ptPrice"
+        app:layout_constraintStart_toStartOf="@+id/ptPrice" />
+
+    <EditText
+        android:id="@+id/ptPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSave"
+        app:layout_constraintStart_toStartOf="@+id/buttonSave" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
